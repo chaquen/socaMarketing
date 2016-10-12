@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: kalinga;
+}
+table {
+    margin: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+thead {
+    background: blue;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+}
+th {
+    height: 50px;
+}
+#divMuestra td {
+    width: 100px;
+    font-size: 9px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+#divMuestra td:nth-child(2) {
+    width: 400px;
+    text-align: center;    
+}
+#divMuestra td:nth-child(10) {
+    width: 350px;
+    text-align: center;    
+}
+#divMuestra td:nth-child(11) {
+    width: 400px;
+    text-align: center;    
+}
+#divTodasLasEncuestas td:first-child {
+    font-size: 15px;
+}
+
+tr:hover {
+    background-color: #A9D0F5;
+}
+td:hover {
+    background-color: #819FF7;
+    color: white;
+}
+td h3 {
+    font-size: 13px;
+}

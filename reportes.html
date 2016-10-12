@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>reporte</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Estilos/formularios.css" />
+        <link rel="stylesheet" type="text/css" href="Estilos/reportes.css" />
+        <link rel="stylesheet" type="text/css" href="Estilos/imprimir.css" />
+        <!--SCRIPTS PARA EXPORTAR A PDF
+        <script type="text/javascript" src="Scripts/exportar2Pdf/jspdf.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/html2canvas.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/html2pdf.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/canvas.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/cell.js"></script>
+        
+        <script type="text/javascript" src="Scripts/exportar2Pdf/addhtml.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/addimage.js"></script>        
+        <script type="text/javascript" src="Scripts/exportar2Pdf/png_support.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/zlib.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/png.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/split_text_to_size.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/standard_fonts_metrics.js"></script>
+        <script type="text/javascript" src="Scripts/exportar2Pdf/FileSaver.js"></script>        
+        FIN SCRIPTS PARA EXPORTAR A PDF-->
+        <link rel="stylesheet" type="text/css" href="Estilos/tabla.css" />
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link href="Estilos/pruTab.css" rel="stylesheet" type="text/css"/>
+        <script>
+            /*Chart.default.global={
+                scaleFontSize: 20,
+                responsive:true
+            }*/
+        </script>
+        
+    </head>
+    <body id="miCuerpo">
+        <a id="volver">Volver</a>
+        <form id="formReporte" class="formulario">
+            <ul>
+                <li></li>
+                <li></li>
+                <li>
+                    <h4>Seleccione una Encuesta</h4>
+                </li>
+                <!--<li>
+                    <input id="dtFechaFinalizacionEncuestaUno" type="date">
+                </li>
+                <li>
+                    <input id="dtFechaFinalizacionEncuestaDos" type="date">
+                </li>
+                 <li>
+                    <input id="btnBuscarEncuesta" type="button" value="Buscar">
+                </li>-->
+                
+                <li>
+                    <select id="selEncuestaReporte">
+                        <option value="0">--No hay encuestas finalizadas--</option>
+                    </select>
+                </li>
+                
+               
+                <li>
+                    <input type="hidden" id="hdIdEncuestaReporte">
+                </li>
+                <li>
+                    <h4 id="hNombreEncusta"></h4>
+                </li>
+                <li id="divReZona">
+                    <h4>Seleccione zona </h4>
+                  <!--<select id="selReporte"></select>-->
+                </li>
+                <li>
+                    <select id="selReporteZona"></select>
+                </li>
+                <li>
+                    <h4>Seleccione concesionario </h4>
+                </li>
+                <li>
+                    <select id="selReporteConcesionario"></select>
+                </li>
+                <!--<li>
+                    <h4>Tipo de grafico</h4>
+                </li>
+                <li>                  
+                    <select id="selTipoGrafico">
+                        <option value="Columna">Columnas</option>         
+                        <option value="Torta">Torta</option>                                  
+                        <option value="Torta3D">Torta 3D</option>                                  
+                        <option value="Dona">Dona</option>
+                    </select>                   
+                </li>-->
+		<li id="divRangosReporte">
+                   
+		</li>
+                <li>
+                    <input type="button" id="btnReporte" value="Generar informe">
+                </li>
+                <li>
+                    <a download="dtReporte.xls" href="#" onclick="return ExcellentExport.excel(this,'divExportar','Reporte');">Exportar EXCEL</a>   
+                    <a href="#" id="aExportarPDF">Exportar PDF</a>   
+                    <a href="http://documento.online-convert.com/es/convertir-a-pptx" target="_blank">Convertidor Online A Power Point</a>
+                </li>
+            </ul>
+        </form>   <!-- <div id="divExportar">
+                <div id="divMuestra">
+
+                </div>
+                <div id="divReporte">
+
+                </div>
+            </div>-->
+        
+            <table id="divExportar" style="background: white;">
+                <tr id="divMuestra">
+                        
+                </tr>
+                <tr id="divReporte">
+
+                </tr>
+                <tr id="divReporteRankingZonas">
+                    
+                </tr>
+                <tr id="divReportePreguntaGeneral"></tr>
+            </table>
+        
+        <script src="Scripts/jquery-2.1.3.js"></script>
+        <script src="Scripts/datos/prototipos.js"></script>
+	<script src="Scripts/datos/funciones.js"></script>
+     	<script src="Scripts/Reportes/reportes.js"></script>
+        <script src="Scripts/Reportes/excellentexport.js"></script>
+        
+    </body>
+</html>

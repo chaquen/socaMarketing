@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soca Marketing</title>
+        <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="Estilos/menuAdmin.css"/>
+        <link rel="stylesheet" type="text/css" href="Estilos/formularios.css"/>
+	<script type="text/javascript" src="Scripts/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="Scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="Scripts/efectos.js"></script>
+        <script type="text/javascript" src="Scripts/datos/prototipos.js"></script>
+	<script type="text/javascript" src="Scripts/datos/funciones.js"></script>
+        <script type="text/javascript" src="Scripts/menuAdministrador.js"></script>
+        <script type="text/javascript" src="Scripts/Reportes/excellentexport.js"></script>
+   </head>
+    <body>
+        <div class="cerrarA">
+            <!--Ancla de referencia para cerrar el menu-->
+            <a id="aSalir">Salir</a>
+        </div>
+        <div>
+            <img src="Imagenes/logoLargo.jpg" class="logoLargo">
+        </div>
+        <input id="hdrol" type="hidden">
+        <input id="hdIdUsuarioAdmin" type="hidden">		
+        <!--Navegador Principal+++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <div id="divCuerpo">
+        <nav>
+            <ul>
+                <!--Ancla de referencia al menu de las Encuestas-->
+		<a href="#" id="menEncuesta">
+                    <!--Elementos del menu-->
+                    <li>
+                        <img src="Iconos/Clipboard.png" />
+			<h4>Encuestas</h4>
+                    </li>
+		</a>
+		<!--Ancla de referencia al menu de las Muestras-->
+		<a href="#" id="menMuestra">
+                    <!--Elemento del menu-->
+                    <li>
+			<img src="Iconos/Coding.png"/>
+			<h4>Base de Datos</h4>
+                    </li>
+		</a>
+		<a  id="aReportes">
+                    <li>
+			<img src="Iconos/Graph.png" />
+			<h4>Reportes</h4>
+                    </li>
+		</a>
+		<a href="#" id="zona">
+                    <li>
+                        <img src="Iconos/Globe.png" />
+			<h4>Zonas</h4>
+                    </li>
+		</a>
+                <a href="#" id="regUsu">
+                    <li class="outForm">
+                    	<img src="Iconos/User128.png" />
+                        <h4>Usuarios</h4>
+                    </li>
+		</a>
+            </ul>
+	</nav>
+        </div>    
+        <!--Fin navegador Principal-->
+        <!--Division con el menu de las Encuestas-->
+        <div class="sub" id="subEncuesta">
+            <div class="cerrar">
+		<!--Ancla de referencia para cerrar el menu-->
+                <a href="#">X</a>
+            </div>
+            <div class="opciones">
+		<ul>
+                    <li id="preg" class="outForm">
+                        <a href="#" class="crearPreg">
+                            <h3>Crear Preguntas</h3>
+                        </a>
+                        <a href="#" class="crearPreg"><img src="Iconos/preguntas128.png" /></a>
+                    </li>
+                    <li>
+                        <a id="aEncuestasUno"  class="crearEncu" >
+                            <h3>Crear Encuestas</h3>
+                        </a>
+                        <a  id="aEncuestasDos" class="crearEncu" ><img src="Iconos/crear128.png" /></a>
+                    </li>
+                    <li id="asigEncu" class="outForm">
+			<a id="asignarMuestraUno" href="#" class="asigEncu">
+                            <h3>Asignar Encuesta a Usuario</h3>
+                        </a>
+			<a id="asignarMuestraDos" href="#" class="asigEncu">
+                            <img src="Iconos/subUser128.png" />
+                        </a>
+                    </li>   
+                    <li id="impEncu" class="outForm">
+			<a id="asignarMuestraUno" href="#" class="asigEncu">
+                            <h3>Importar encuesta</h3>
+                        </a>
+			<a id="asignarMuestraDos" href="#" class="asigEncu">
+                            <img src="Iconos/subUser128.png" />
+                        </a>
+                    </li>   
+                    <li class="outForm">
+                        <a id="aConsultarEncuestaUno" >
+                            <h3>Consultar</h3>
+                        </a>
+			<a id="aConsultarEncuestaDos" ><img src="Iconos/Search128.png" /></a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+        <!--Formulario para la Asignacion de la Encuesta-->
+        <div id="forAsigEnUs" class="formulario">
+            <div class="cerrar">
+                <!--Ancla de referencia para cerrar el menu-->
+                <a href="#">X</a>
+            </div>
+            <form id="formAsocMuestraEncuesta">
+                <ul>
+                    <li><h2>Programe la cantidad de encuestas que va a realizar</h2></li>
+                    <li>
+                        <h4>Seleccione usuario</h4>
+                        <select id="selUsuarioMuestra"></select>
+                        <h4 id="lblUsuario"></h4>
+                    </li>
+                    <li>
+                        <h4>Seleccione la Encuesta </h4>
+                        <select id="selAsignarMuestraEncuesta">
+                            <option value="0">--Seleccione una encuesta--</option>
+                        </select>
+                    </li>                   
+                    <li>
+                        <h4>Seleccione la zona</h4>
+                        <select id="selZonaMuestra"></select>
+                        <h4 id="lblZona"></h4>
+                    </li>
+                    <li>
+                        <h4>Seleccione el concesionario</h4>
+                        <select id="selConcesionarioMuestra"></select>
+                        <h4 id="lblConce"></h4>
+                    </li>
+                    <li>
+                       <div id="divRangoUno"></div>
+                       <input id="rUno" type="hidden">
+                       <!--<input id="txbRangoUno" type="text">-->
+                       <h4 id="lblRuno"></h4>
+                    </li>
+                    <li>
+                        <div id="divRangoDos"></div>
+                        <input id="rDos" type="hidden">
+                        <!--<input id="txbRangoDos" type="text">-->
+                        <h4 id="lblRdos"></h4>
+                    </li>
+                    <li>
+                        <div id="divRangoTres"></div>
+                        <input id="rTres" type="hidden">
+                        <!---<input id="txbRangoTres" type="text">-->
+                        <h4 id="lblRtres"></h4>
+                    </li>
+                    <li>
+                        <div id="divRangoCuatro"></div>    
+                        <input id="rCuatro" type="hidden">
+                        <!--<input id="txbRangoCuatro" type="text">-->
+                        <h4 id="lblRcuatro"></h4>
+                    </li>
+                    <li>
+                        <input type="button" id="btnAsociar" value="Asociar">
+                        <h4 id="lblConcesionario"></h4>
+                        <h4 id="lblUser"></h4>
+                        <h4 id="idNombreEncuesta"></h4>
+                        <h4 id="idRes"></h4>
+                        <input type="hidden" id="hdidEncu" value="">
+                        <input type="hidden" id="hdCantMuestreo" value="">
+                        <input type="hidden" id="hdCantAsignadas" value="">
+                        <input type="hidden" id="hdMuestra" value="">
+                    </li>
+                </ul> 
+            </form>
+        </div>
+        <!--Fin division para asignar la encuesta-->
+        
+        <!--Formulario para la imporatcion de la Encuesta-->
+        <div id="forImportEncuesta" class="formulario">
+            <div class="cerrar">
+                <!--Ancla de referencia para cerrar el menu-->
+                <a href="#">X</a>
+            </div>
+            <form id="formImportarMuestraEncuesta">
+                <ul>
+                    <li><h2>Aqui podra subir los aplicativos ya resueltos</h2></li>
+                    <li>
+                        <h4>Primer paso: selecciona tu aplicativo</h4>
+                        <h4>Seleccione aplicativo</h4>
+                        <select id="selAplicativo"></select>
+                        <h4 id="lblUsuario"></h4>
+                    </li>
+                    
+                    <li>
+                        <h4>Segundo paso: Ahora, debes verificar que las celdas concuerden con las preguntas y respuestas de tu aplicativo </h4>
+                    </li>
+                    <li>
+                        <form id="formVerificar">
+                            <div id="divVerificar">
+                            
+                            </div>
+                        </form>
+                        
+                    </li>
+                    <li>
+                        <h4>Tercer paso: selecciona e importa tu archivo EXCEL(.xlsx) </h4>
+                        <h4>Selecciona tu archivo</h4>
+                        <input id="flvMiEncuesta" type="file">
+                    </li>
+                    
+                    <li>
+                        <input type="button" id="btnImportarEncuesta" value="Importar">
+                        
+                    </li>
+                </ul> 
+            </form>
+        </div>
+        <!--Fin division para asignar la encuesta-->
+        
+        <!--Formulario para la creacion de las preguntas-->
+        <div id="forCrearPreg" class="formulario">
+            <div class="cerrar">
+                <!--Ancla de referencia para cerrar el menu-->
+                <a href="#">X</a>
+            </div>
+            <form id="formCrearPregunta" >
+                <ul>
+                    <li><h2>Creación de preguntas </h2></li>
+                    <li><p>En esta sección podra crear las preguntas que no se encuntran actualmente en el sistema.</p></li>
+                    <li><h4 id="h4MisPreguntas">Mis preguntas</h4></li>
+                    <li><h4>Seleccione el tipo de pregunta</h4></li>
+                    <li>
+                        <select id="selTipoPregunta">
+                            <option value="Abierta" selected>Abierta</option>
+                            <option value="AbiertaCategoria" >Abierta con categoría</option>
+                            <option value="Cerrada">Cerrada</option>
+                            <option value="CerradaComentario">Cerrada con comentario</option>
+                            <option value="CerradaMultiple">Cerrada Multiples opciones</option>
+                            <option value="Rankin">Rankin</option>
+                            <option value="GrupoPreguntas">Grupo de preguntas (nueva)</option>
+                        </select>
+                    </li>
+                    <li>
+                        <input id="txbPregunta" type="text" placeholder="Argumento de la pregunta e.j Estas feliz?" required spellcheck="true"/>
+                    </li>
+                    <li id="liBtnAgregarRespuesta">
+                        
+                    </li>
+                    <li>
+                        <div id="dvOpcionesRespuesta">
+                    
+                        </div>
+                    </li>
+                    <li>
+                        <input id="btnCrearPregunta" type="button" value="crear pregunta"/>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!--Fin Formulario para crear Preguntas-->
+        
+<!--Fin Encuestas-->
+        
+        <!--Division para el manejo de las Bases de Datos ++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+        <div class="sub" id="subMuestra">
+            <div class="cerrar">
+                <!--Ancla de referencia para cerrar el menu-->
+		<a href="#">X</a>
+            </div>
+            <div class="opciones">
+		<ul>
+                    <li id="cargaBD" class="outForm">
+			<a id="subirMuestraUno" href="#" class="subirEncu">
+                            <h3>Cargar Base de Datos</h3>
+                        </a>
+                        <a id="subirMuestraDos" href="#" class="subirEncu"><img src="Iconos/Cargar128.png" /></a>
+                    </li>
+                    <li id="asigBD" class="outForm">
+                        <a id="asignarMuestraTres" href="#" class="asigEncu">
+                            <h3>Asignar BD a una Encuesta</h3>
+                        </a>
+                        <a id="asignarMuestraCuatro" href="#" class="asigEncu"><img src="Iconos/AsigDB.png" /></a>
+	            </li>
+                    <li>
+                        <a href="consultarMuestra.html">
+                            <h3>Consultar</h3>
+                        </a>
+			<a href="consultarMuestra.html"><img src="Iconos/Search128.png" /></a>
+                    </li>
+                    <li>
+			<a href="editarDetalleMuestra.html">
+                            <h3>Editar muestra</h3>
+                        </a>
+			<a href="editarDetalleMuestra.html"><img src="Iconos/Descargar128.png" /></a>
+                    </li>
+		</ul>
+            </div>
+	</div> <!--Fin del menu de la base de datos-->
+        
+        <!--Formulario para Cargar las Bases de Datos al Sistema-->
+        <div id="forSubirEncu" class="formulario">
+             <form id="formCargarMuestra" enctype="multipart/form-data">
+            <div class="cerrar">
+                <a href="#">X</a>
+            </div>
+                <ul>
+                    <li><h2>Subir base de datos</h2></li>
+                    <li>
+                        <p>En esta sección usted podra subir el archivo con la base de datos de los clientes.</p>
+                        <p>1-Recuerde que todos los concesionarios que usted incluya en su base de datos debe estar registrados en el sistema</p>
+                        <p>2-Todos los números decimales deben estar separados por un .(punto) en lugar de la ,(coma).</p>
+                        <h4>¡Recuerde que de no seguir estas instrucciones no se podra hacer un registro satisfactorio de toda su base de datos!</h4>
+                    </li>
+                    
+                    <li>
+                        <div>
+                             <h4>Nombre de la base de datos</h4>
+                             <input id="txbNombreMuestra" type="text" required>
+                         </div>
+                    </li>
+                    <li>
+                        <div>
+                            <a href="Archivos/FormatoMuestraOriginal.xlsx" download="formatoBaseDeDatos">Descargar formato</a>
+                            <h4>Archivo con extencion (.csv)</h4>    
+                            <input type="file" id="flvArchivoMuestra">
+                         </div>
+                    </li>
+                    
+                    <li>
+                        <button id="btnSubirMuestra" type="button" onclick="subirArchivo('flvArchivoMuestra'); false;" >
+                            subir archivo
+                        </button>
+                    </li>
+                    <li></li>                      
+                </ul>                                   
+            </form>
+        <div id="divResp"></div>
+        </div>        
+        <!--FIN Formulario para la carga de una base de datos-->
+        
+        <!--Formulario para Asignar la Base de Datos-->
+        <div id="forAsigEncu" class="formulario">
+            <div class="cerrar">
+                <!--Ancla de referencia para cerrar el menu-->
+		<a href="#">X</a>
+            </div>
+            <ul>
+                <li>
+                    <h2>Relacione la encuesta a una bases de datos </h2>
+                </li>
+                <li>
+                    <p>En esta sección usted podra, ralacionar una base de datos a una encuesta.</p>
+                </li>
+                <li>
+                    <select id="selEncuestaAsociacion">
+                        <option value="0">No hay encuestas registradas en la base de datos</option>
+                    </select>
+                </li>
+                <li>
+                    <select id="selMuestras">
+                        <option>Seleccione una base de datos</option>
+                    </select>
+                </li>
+                <li>
+                    
+                </li>
+                <li>
+                    <div id="listaMuestras">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--Fin Formulario para Asignar la BD a una Encuesta-->
+        
+        <!--Formulario para consultar las Bases de Datos-->
+        
+        <!--Fin consulta de Bases de Datos-->
+        
+<!--Fin Base de Datos-->        
+
+        <!--Division para el menu de las Zonas-->
+        <div class="sub" id="subZona">
+            <div class="cerrar">
+            <!--Ancla de referencia para cerrar el menu-->
+            <a href="#">X</a>
+        </div>
+        <div class="opciones">
+            <ul>
+                <li id="creZona" class="outForm">
+                    <a href="#"><h3>Crear Zonas</h3></a>
+                    <a href="#"><img src="Imagenes/CrearZona.png"></a>
+                </li>
+                <li id="conZona" class="outForm">
+                    <a href="#"><h3>Consultar Zonas</h3></a>
+                    <a href="#"><img src="Iconos/Search128.png"></a>
+                </li>
+                <li id="creConse" class="outForm">
+                    <a href="#"><h3>Crear Concesionario</h3></a>
+                    <a href="#"><img src="Iconos/Conse.png"></a>
+                </li>
+                <li id="conConse" class="outForm">
+                    <a href="#"><h3>Consultar Concesionario</h3></a>
+                    <a href="#"><img src="Iconos/Search128.png"></a>
+                </li>
+            </ul>
+        </div>
+    </div><!--Fin menu de las Zonas-->
+    
+    <!--Formularios para las opciones de las Zonas-->
+    <form id="formCrearZona" class="formulario">
+        <div class="cerrar">
+            <a href="#">X</a>
+        </div>
+        <ul>
+            <li><h2>Creacion de Zonas</h2></li>
+            <li>
+                <p>
+                    En este Formulario podra crear las Zonas.
+                </p>
+            </li>
+            <li><h4>Ingrese el nombre de la zona</h4></li>
+            <li><input type="text" id="txbZona"></li>
+            <li><h4>Ingrese el nombre del gerente de la zona</h4></li>
+            <li><input type="text" id="txbDirectorZona"></li>
+            <li><input type="button" value="crear Zona" id="btnCrearZona"></li>
+        </ul>    
+    </form>
+    
+    <form id="formCrearConcesionario" class="formulario">
+        <div class="cerrar">
+            <a href="#">X</a>
+        </div>
+        <ul>
+            <li><h2>Creacion de Concesionarios</h2></li>
+            <li>
+                <p>En este formulario podra crear los concesionarios.</p>
+            </li>
+            <li><h4>Ingrese el nombre del concesionario</h4></li>
+            <li><input type="text" id="txbConcesionario"></li>
+            <li><h4>Ingrese el nombre del director</h4></li>
+            <li><input type="text" id="txbDirector"></li>
+            <li><h4>Seleccione una zona</h4></li>
+            <li><select id="selZona"></select></li>
+            <li><input  id="btnCrearConcesionario" type="button" value="crear concesionario"></li>
+        </ul>  
+    </form>
+    <!--Consultar concesionarios-->
+    <form id="formBuscarConcesionario" class="formulario">
+        <div class="cerrar">
+            <a href="#">X</a>
+        </div>
+        <ul>
+            <li><h2>Busqueda de Concesionarios</h2></li>
+            <li>
+                <p>En este formulario usted podra buscar los concesionarios, tanto por Zona como por concesionario especifico.</p>
+            </li>
+            <li><h4>Buscar concesionarios por zona</h4></li>
+            <li><h4>Seleccione una zona</h4></li>
+            <li><select id="selBuscarZona"></select></li>
+            <li><h4>Seleccione concesionario</h4></li>
+            <li><select id="selBuscarConc"></select></li>
+        </ul>
+        <div id="divConcesionarios">
+                      
+        </div>
+    </form>
+    <!--Consultar zonas-->
+    <form id="formBuscarZona" class="formulario">
+        <div class="cerrar">
+            <a href="#">X</a>
+        </div>
+        <ul>
+            <li><h2>Busqueda de Zonas</h2></li>
+            <li>
+                <p>En este formulario usted podra buscar las zonas</p>
+            </li>
+            <li><h4>Buscar  zona</h4></li>
+            <li><h4>Seleccione una zona</h4></li>
+            <li><select id="selBuscarZonaDos"></select></li>
+            
+            
+        </ul>
+        <div id="divZonas">
+                      
+        </div>
+    </form>
+    <!--Editar  consesionarios-->
+    <div id="editarConcesionario" style="display:none">
+            <form id="formEditaZonasyConcesionarios">
+                <ul>
+                    <li>
+                        <h3 id="nombre"></h3>
+                        <input id="hdIdEditar" type="hidden">
+                        <h3>Nombre</h3>
+                        <input id="txbNombreEditar" type="text">
+                    </li>
+                    <li>
+                        <h3 id="director"></h3>
+                        <h3>Director</h3>
+                        <input id="txbDirectorEditar" type="text">
+                    </li>
+                    <li>
+                        <input id="btnEditar" type="button" value="Editar" onclick="editar();">
+                    </li>
+                </ul>
+            </form>
+       </div>
+     <div id="editarZona" style="display:none">
+            <form id="formEditaZonas">
+                <ul>
+                    <li>
+                        <h3 id="nombreZn"></h3>
+                        <input id="hdIdEditarZn" type="hidden">
+                        <h3>Nombre</h3>
+                        <input id="txbNombreEditarZn" type="text">
+                    </li>
+                    <li>
+                        <h3 id="director"></h3>
+                        <h3>Gerente</h3>
+                        <input id="txbDirectorEditarZn" type="text">
+                    </li>
+                    <li>
+                        <input id="btnEditar" type="button" value="Editar" onclick="editar();">
+                    </li>
+                </ul>
+                 
+                
+                
+                
+            </form>
+       </div>
+    <!--Fin de las opciones de las Zonas-->
+    
+    <!--Registro de nuevo Usuario-->
+    <div id="forRegistrarUs" class="formulario">
+        <div class="cerrar">
+            <a href="#">X</a>
+        </div>
+        <form id="formRegistroUsuario">
+            <ul>
+                <li><h2>Registrar usuario</h2></li>
+                <li>
+                    <h4>Nombres:</h4>
+                    <input type="text" id="txbNombres" required />
+                </li>
+                <li>
+                    <h4>Apellidos:</h4>
+                    <input type="text" id="txbApellidos" required />
+                </li>
+                <li>
+                    <h4>Email:</h4>
+                    <input type="email" id="txbEmail" required />
+                </li>
+                <li>
+                    <h4>Cedula:</h4>
+                    <input type="text" id="txbCedula" />
+                </li>
+                <li>
+                    <h4>Clave</h4>
+                    <input type="password" id="txbclave"  />
+                </li>
+                <li>
+                    <h4>Confirmar Clave:</h4>
+                    <input type="password" id="txbConfirmarClave"  />
+                </li>
+                <li>
+                    <h4 id="comparar"></h4>
+                </li>
+                <li>
+                    <select id="selPregunta">
+                        <option value="Nombre mascota?">Nombre mascota?</option>
+                        <option value="Materia favorita?">Materia favorita?</option>
+                        <option value="Empresa desarrolladora?">Empresa desarrolladora?</option>
+                        <option value="Nombre banda favorita?">Nombre banda favorita?</option>
+                        <option value="Hincha de ?">Hincha de ?</option>
+                    </select>
+                </li>
+                <li>
+                    <h4>Respuesta:</h4>
+                    <input type="text" id="txbRespuesta" required />
+                </li>
+                <li>
+                    <select id="selRol"></select>
+                </li>
+                <li>
+                    <input type="button" value="Registrar" id="btnRegistrarUsuario" />
+                </li>
+            </ul>
+        </form>
+    </div>
+    <!--Fin Registro Usuario-->
+    
+    <!--Tabla con los registros que o se han registrado-->
+    <div id="divNoRegistrados" style="display:'none'"></div>
+    </body>
+</html>

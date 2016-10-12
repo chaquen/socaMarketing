@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.formulario {
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    background: white;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    font-family: Kalinga;
+    color: blue;
+}
+.formulario ul {
+    width: 100%;
+    list-style: none;
+    margin-top: -25px;
+    padding-bottom: 5px;
+    /*border: 1px solid yellow;*/
+}
+.formulario ul li {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    /*border: 1px dashed coral;*/
+}
+.formulario li h2 {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    /*border: 1px dashed blue;*/
+}
+.formulario li h4 {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    /*border: 1px dashed red;*/
+}
+.formulario li p {
+    width: 90%;
+    margin: auto;
+    color: black;
+    text-shadow: 1px 1px 1px blue;
+    text-justify: auto;
+}
+.formulario li input {
+    width: 300px;
+    height: 25px;
+}
+.formulario li select {    
+    width: 300px;
+    height: 25px;
+}
+.formulario li a {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+}
+.formulario li input[type="button"] {
+    width: 120px;
+    background: black;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+/*Estilo para ocultar los formularios*/
+
+#forAsigEnUs {
+    display: none;
+}
+#forCrearEncu {
+    display: none;
+}
+#forCrearPreg {
+    display: none;
+}
+#forSubirEncu {
+    display: none;
+}
+#forAsigEncu {
+    display: none;
+}
+#formCrearZona {
+    display: none;
+}
+#formCrearConcesionario {
+    display: none;
+}
+#formBuscarConcesionario {
+    display: none;
+}
+#formBuscarZona {
+    display: none;
+}
+#forRegistrarUs {
+    display: none;
+}
+#forImportEncuesta{
+    display: none;
+}
+
+
