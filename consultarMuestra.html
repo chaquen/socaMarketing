@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Consultar muestra</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Scripts/jquery-2.1.3.js"></script>
+        <script src="Scripts/datos/prototipos.js"></script>
+	<script src="Scripts/datos/funciones.js"></script>
+	<script src="Scripts/Encuestas/consultarMuestra.js"></script>
+        <script src="Scripts/Reportes/excellentexport.js"></script>
+        <link href="Estilos/formularios.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="Estilos/tabla.css"/>
+        <link href="Estilos/formularios.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="Estilos/reportes.css" />
+    </head>
+    <body>
+        <a id="volver" href="menuAdministrador.html" >Volver</a>
+        <div >
+            <form class="formulario">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li><h4>Seleccione la base de datos</h4></li>
+                    <li>
+                        <select id="selMuestras">
+                            <option value="0">No hay bases de datos </option>
+                         </select>
+                    </li>
+                    <li>
+                        <a id="anclaExportar" download="dtMuestra.xls" href="#" onclick="return ExcellentExport.excel(this,'divMuestra','Muestra');">Exportar</a>
+                    </li>
+                    <li>
+                        <div id='divConsultaMuestra'></div>
+                    </li>
+                </ul>
+            </form>
+            
+            
+            
+        </div>
+        
+        
+        <table id="divMuestra">            
+        </table>
+    </body>
+</html>

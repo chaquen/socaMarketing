@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editar encuesta</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="Estilos/crearEncuestas.css"/>
+        <script src="Scripts/jquery-2.1.3.js"></script>
+        <script src="Scripts/datos/prototipos.js"></script>
+	<script src="Scripts/datos/funciones.js"></script>
+	<!--<script src="Scripts/Encuestas/adminEncuesta.js"></script>-->
+        <script src="Scripts/Encuestas/editarEncuesta.js"></script>
+     	<!--<script src="Scripts/adminFormularios.js"></script>-->
+
+    </head>
+    <body>
+        
+        <a  id="volver">Volver</a>        
+        <div class="forCreacionNuevaEncuesta">
+            <div id="divOcultos">
+                <input id="hdIdUser" type="hidden">
+                <input id="hdArray" type="hidden">
+            </div>
+            <form id="formCrearEncuesta">
+                <h2>Encuesta</h2>
+                <p>
+                    En esta sección, usted podra ver las preguntas que tiene la encuesta, cuando halla terminado
+                    de seleccionar las preguntas presione la tecla editar encuesta, 
+                    para editar la encuesta.
+                    <br />
+                    <a href="#" class="cerrarP">Cerrar</a>
+                    <br/>
+                </p>
+                <h4>Nombre Encuesta</h4>
+                <input id="txbNombreEncuesta" type="text"  required/>
+                <input id="btnCrearEncuesta" type="button" value="Editar Encuesta">
+                <div id="divFormPlantilla">
+                    
+                </div>
+            </form>
+            <div>
+                
+            </div>
+        </div>
+        <div class="preguntasCreacionEncuesta">
+            <!--
+            <div id="divListarPlantillas">
+                <div>
+                     <h4>PLANTILLAS</h4>
+                 </div>
+               <div>
+                   <input id="btnAgregarPlantilla" value="Usar plantilla" type="button">
+              </div>
+           </div>
+            -->
+            <h2>Preguntas</h2>
+            <p>
+                En esta seccion podra encontrar las preguntas que podra adherir a la Encuesta,
+                las cuales se seleccionan al dar click sobre ellas.
+                <br />
+                Usted podra observar la pregunta en el formulario que se esta creando al lado izquierdo de la pantalla.
+                <br />
+                <a href="#" class="cerrarP">Cerrar</a>
+                <br/>
+            </p>
+            <div id="divAbiertas" class="tipoPregunta">
+                <h2 onclick="ocultarAbiertas();">ABIERTAS</h2>
+                <ul id="liAbiertas"></ul>
+            </div>
+            <div id="divCerradas" class="tipoPregunta">
+                <h2 onclick="ocultarCerradas();">CERRADAS</h2>
+                <ul id="liCerradas"></ul>
+            </div>
+            <div id="divCerradasComentario" class="tipoPregunta">
+                <h2 onclick="ocultarCerradaComentario();">CERRADAS CON OPCION DE UN COMENTARIO</h2>
+                <ul id="liCerradasComentario"></ul>
+            </div>
+            <div id="divCerradasMultiple" class="tipoPregunta">
+                <h2 onclick="ocultarOpcionMultiple();">CERRADAS MULTIPLES OPCIONES</h2>
+                <ul id="liCerradasMultiple"></ul>
+            </div>
+            
+            
+        </div>
+           
+    </body>
+</html>

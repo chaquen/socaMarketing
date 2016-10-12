@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h6 {
+    clear: both;
+    margin-top: 70px;
+}
+.logoSoca {
+    width: 140px;
+    height: 140px;
+    border: 1px solid black;
+    float: left;
+    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.logoLargo {
+    width: 300px;
+    height: 30px;
+    float: left;
+    margin-left: 30%;
+    margin-top: 180px;
+}
+.divBienvenida {
+	width: 40%;
+	height: 80px;
+        clear: both;
+	background: #38610B;
+	padding-top: 5px;
+	margin: 10px auto 0;
+        padding-bottom: 5px;
+}
+.divBienvenida p {
+	color: white;
+	text-align: center;
+        padding-top: 15px;
+	font-family: Kootenay;
+	font-size: 20px;
+}
+.divBienvenida span {
+	color: white;
+	font-family: Buxton Sketch;
+	font-size: 40px;
+}
+.divLogueo {
+	width: 50%;
+	height: 100px;
+	margin: 0 auto;
+	text-align:center;
+	padding-top: 10px;
+}
+.divLogueo h2 {	
+	font-family: Kalinga;
+        font-size: 22px;
+}
+.divLogueo ul {
+    list-style: none;
+    margin: auto;
+    width: 80%;
+    background: white;
+    opacity: 0.9;
+}
+.divLogueo ul li {
+    width: 90%;
+    height: 30px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.divLogueo li h4 {
+    float: left;
+    margin-left: 8%;
+    color: white;
+    width: 40%;
+    background: gray;
+    font-family: Kalinga;
+}
+.divLogueo li input {
+    float: right;
+    width: 40%;
+    height: 22px;
+    margin-right: 8%;
+}
+.divLogueo li input[type="button"] {
+    width: 100px;
+    height: 30px;
+    margin-right: 40%;
+    color: white;
+    background: #38610B;
+}
+.divLogueo li input[type="button"]:hover {
+    cursor:pointer;
+    cursor:hand;
+}
+.divLogueo a {
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+    border-radius: 5px;
+    background: #38610B;
+}

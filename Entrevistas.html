@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Entrevista al Usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Estilos/prueba.css"/>
+        <link rel="stylesheet" type="text/css" href="Estilos/paginacion.css">
+        <script type="text/javascript" src="Scripts/jquery-2.1.3.js"></script>
+        <script type="text/javascript" src="Scripts/datos/prototipos.js"></script>
+	<script type="text/javascript" src="Scripts/datos/funciones.js"></script>
+	<script type="text/javascript" src="Scripts/Encuestas/entrevista.js"></script>
+    </head>
+    <body>
+        
+        <div class="cerrarE">
+            <a id="salirEntrevista" >Salir</a>
+        </div>
+        <!--Division del encabezado de la entrevista, en el cual esta la informacion del cliente-->
+        <h4 id="hRealizadas"></h4>
+        <div id="cuerpoEntrevista">
+            <h2 id="hNombreEncuesta"></h2>
+            <ul id="areaZona">
+                <li>
+                    <h4>Zona</h4>
+                    <h5 id="NombreZona"></h5>
+                </li>
+                <li>
+                    <h4>Consecionario</h4>
+                    <h5 id="hNombreConcesionario"></h5>
+                </li>
+                <li>
+                    <h4>Director</h4>
+                    <h5 id="hDirectorZona"></h5>
+                </li>
+                <li>
+                    <h4 >Asesor</h4>
+                    <h5 id="hAsesor"></h5>
+                </li>
+            </ul>
+            <ul id="areaCliente">
+                <li>
+                    <h4>Cliente</h4>
+                    <h5 id="nomUser"></h5>
+                </li>
+                <li>
+                    <h4>Telefono 1</h4>
+                    <h5 id="hTelefonoUno"></h5>
+                </li>
+                <li>
+                    <h4>Telefono 2</h4>
+                    <h5 id="hTelefonoDos"></h5>
+                </li>
+            </ul>
+            <ul id="areaCelular">
+                <li>
+                    <h4>Celular 1</h4>
+                    <h5 id="hCelularUno"></h5>
+                </li>
+                <li>
+                    <h4>Celular 2</h4>
+                    <h5 id="hCelularDos"></h5>
+                </li>
+                <li>
+                    <h4>Celular 3</h4>
+                    <h5 id="hCelularTres"></h5>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h4>Contrato</h4>
+                    <h5 id="hContrato"></h5>
+                </li>
+                <li>
+                    <h4>Cuotas Pagadas</h4>
+                    <h5 id="hCuotasPagas"></h5>
+                </li>
+                <li>
+                    <h4>Cuotas en Mora</h4>
+                    <h5 id="hCuotasMora"></h5>
+                </li>
+                <li>
+                    <h4>Cupo</h4>
+                    <h5 id="hCupo"></h5>
+                </li>
+                <li>
+                    <h4>Observaciones</h4>
+                    <h5 id="hObservaciones"></h5>
+                </li>
+            </ul>
+            <ul id="areaSeleccion">
+                <li>
+                    <h4>¿Realizar Encuesta?</h4>
+                </li>
+                <li>
+                    <input id="btnAceptar" type="button" value="Si" />
+                </li>
+                <li>
+                    <input id="btnCancelar" type="button" value="No" />
+                </li>
+                <li >
+                    <h4>Parentesco</h4>
+                </li>
+                <li>
+                    <select id="selParentesco">
+                        <option value="--">Seleccione el Parentesco</option>
+                        <option value="Titular">Titular</option>
+                        <option value="Esposo">Esposo</option>
+                        <option value="Hermano">Hermano</option>
+                        <option value="Hijo">Hijo</option>
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                   
+                </li>
+                <li>
+                     <div id="divParentesco"></div>
+                </li>
+            </ul>
+            <div>
+                <input id="btnAgrupadas" type="button" value="Agrupar">
+                <input id="btnLista" type="button" value="Listado">
+            </div>
+            <form id="formRegEncuesta">
+                <div id="divPreguntas">
+                </div>               
+                <div id="divPaginas">                    
+                </div>
+                <div id="divFinalizarEntevista">
+                    <h4>Observaciones de la encuesta</h4>
+                    <input id="idObservaciones" type="text" placeholder="Observaciones">
+                    <input id="btnEnviarEncuesta" type="button" value="Finalizar encuesta" >
+                </div>
+            </form>
+        </div>
+        <div id="divCancelacion">
+                <select id="selCancelacion">
+                     <option value="0">--Seleccione una opción--</option>
+                    <option value="NC">No contesta </option>
+                    <option value="NDR">No desea responder </option>
+                    <option value="TE">Teléfono errado </option>
+                    <option value="ND">No hay datos </option>
+                    <option value="EQ">Equivocado </option>
+                    <option value="NE">No efectiva </option>
+                    <option value="CL">Colgo Llamada </option>
+                    <option value="BZ">Buzon  </option>
+                    <option value="AP">Apagado </option>
+                    <option value="CF">Confimar</option>
+                    <option value="VLL">Volver a llamar</option>
+                    
+                                   
+                </select>
+                <h4>Observaciones</h4>
+                <input id="txbObservacionesCancelacion" type="text" >
+                <input id="btnCancelarEntrevista" type="button" value="Registro">
+            </div>
+        
+        <div>
+            <input type="hidden" id="hdIdUsuario">
+            <input type="hidden" id="hdIdEncuesta">
+            <div id="camposOcultos">                
+                <input id="hdIdEncuesta" type="hidden">   
+                <input id="hdIdUsuario" type="hidden"> 
+                <input id="hdIdMuestra" type="hidden"> 
+                <input id="hdRango" type="hidden"> 
+                <input id="hdConcesionario" type="hidden">
+            </div>
+        </div>
+    </body>
+</html>
